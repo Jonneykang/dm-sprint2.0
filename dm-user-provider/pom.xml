@@ -18,10 +18,10 @@
     </properties>
 
     <dependencies>
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-activemq</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>cn.dm</groupId>
             <artifactId>dm-common-dao</artifactId>

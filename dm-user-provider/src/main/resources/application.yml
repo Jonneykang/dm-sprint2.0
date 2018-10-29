@@ -24,10 +24,10 @@ mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
 moduleName: user_provider 
 
-  #profiles: provider1
-  #sleuth:
-    #sampler:
-      #percentage: 1.0
+  profiles: provider1
+  sleuth:
+    sampler:
+      percentage: 1.0
 eureka:
   client:
     service-url:

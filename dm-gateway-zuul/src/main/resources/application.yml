@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: dm-gateway-zuul
+  rabbitmq:
+    host: 192.168.230.130
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
+  redis:
+    database: 0
+    host: 192.168.230.130
+    port: 6379
+    user: root
+    password: 123456
+    timeout: 3000
+server:
+  port: 7600
+zuul:
+  routes:
+    dm-user-consumer: /user/**
+    dm-item-consumer: /item/**
+    dm-order-consumer: /order/**
+    dm-base-consumer: /base/**
+    dm-pay-consumer: /pay/**
+    dm-scheduler-consumer: /scheduler/**
+    dm-file-consumer: /file/**
+    dm-item-search: /search/**
+  strip-prefix: false
+logging:
+  level: debug
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 300000
+  ReadTimeout: 10000000
+feign.hystrix.enabled: false #禁用容错处理，可以查看直接报错信息
+moduleName: gateway_zuul

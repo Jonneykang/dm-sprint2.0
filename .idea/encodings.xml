@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-base-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-base-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-common/dm-common-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-common/dm-common-dao" charset="UTF-8" />
@@ -9,8 +11,21 @@
     <file url="file://$PROJECT_DIR$/dm-common/dm-common-ext-utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-common/dm-common-module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-common/dm-common-utils" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-config-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-discovery-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-file-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-gateway-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-item-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-item-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-item-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-order-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-order-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-pay-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-pay-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-scheduler-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-scheduler-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-user-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dm-user-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dm-zipkin-server" charset="UTF-8" />
   </component>
 </project>

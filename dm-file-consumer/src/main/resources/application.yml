@@ -1,0 +1,14 @@
+server:
+  port: 7800
+spring:
+  application:
+    name: dm-file-consumer
+  http:
+    multipart:
+      maxFileSize: 10Mb
+    maxRequestSize:
+      maxRequestSize: 10Mb
+logging:
+  level: debug
+serverSavePath:
+  /usr/local/images/

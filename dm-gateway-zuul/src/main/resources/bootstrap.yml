@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: dm-gateway-zuul
+  cloud:
+    config:
+      label: sprint2.0_dev
+      uri: http://192.168.9.151:7900/
+      profile: dev
+encrypt:
+  key: dm
+eureka:
+  client:
+    service-url:
+       defaultZone: http://root:123456@192.168.9.151:7776/eureka/
+tokenValidation: '{cipher}bcdd8befd07636e310e28493c884df037c4ad0762b4d678c127f36ee0d1f5ec6'

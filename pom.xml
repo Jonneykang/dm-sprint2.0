@@ -17,6 +17,21 @@
         <module>dm-user-provider</module>
         <module>dm-user-consumer</module>
         <module>dm-discovery-eureka</module>
+        <module>dm-base-provider</module>
+        <module>dm-base-consumer</module>
+        <module>dm-scheduler-provider</module>
+        <module>dm-scheduler-consumer</module>
+        <module>dm-pay-provider</module>
+        <module>dm-pay-consumer</module>
+        <module>dm-order-provider</module>
+        <module>dm-order-consumer</module>
+        <module>dm-item-provider</module>
+        <module>dm-item-consumer</module>
+        <module>dm-item-search</module>
+        <module>dm-file-consumer</module>
+        <module>dm-config-server</module>
+        <module>dm-gateway-zuul</module>
+        <module>dm-zipkin-server</module>
     </modules>
 
 

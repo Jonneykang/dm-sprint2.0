@@ -59,7 +59,7 @@ public class FileType {
         FILE_TYPE_MAP.put("mid", "4D546864");  //MIDI (mid)    
     }
 
-    public static void main(String[] args) throws Exception{
+    /*public static void main(String[] args) throws Exception{
         File f = new File("d://apache-activemq-5.1.0-bin.png");
         if (f.exists()){
             String filetype1 = getImageFileType(f);
@@ -67,7 +67,7 @@ public class FileType {
             String filetype2 = getFileByFile(f);
             System.out.println(filetype2);
         }
-    }
+    }*/
 
     /**
      * Created on 2010-7-1   

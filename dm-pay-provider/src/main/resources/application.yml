@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: dm-pay-provider
+  rabbitmq:
+    host: 192.168.230.130
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
+  datasource:
+    url: jdbc:mysql://192.168.230.130:3306/dm_pay?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+moduleName: pay_provider
+
+---
+spring:
+  profiles: provider1
+  sleuth:
+    sampler:
+      percentage: 1.0
+eureka:
+  client:
+    service-url:
+        #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+         defaultZone: http://root:123456@localhost:7776/eureka/
+  instance:
+    prefer-ip-address: true
+server:
+  port: 7031
+
+
+

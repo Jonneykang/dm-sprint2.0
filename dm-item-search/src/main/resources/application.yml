@@ -1,0 +1,60 @@
+server:
+  port: 8000
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: dm-item-search
+  rabbitmq:
+    host: 192.168.230.130
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
+  redis:
+    database: 0
+    host: 192.168.230.130
+    port: 6379
+    user: root
+    password: 123456
+    timeout: 3000
+  sleuth:
+    sampler:
+      percentage: 1.0
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+      defaultZone: http://root:123456@localhost:7776/eureka/
+hystrix:
+  command:
+    defalut:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 200000
+ribbon:
+  ReadTimeout: 200000
+  ConnectTimeout: 200000
+logging:
+  level: debug
+
+feign:
+  hystrix:
+    enabled: false #禁用容错处理
+
+elasticsearch:
+  ip: 192.168.230.130
+  port: 8300
+  clusterName: elasticsearch-application
+
+lastUpdatedTimeFile:
+   /usr/local/dm_last_updated_time
+
+moduleName: dm-item

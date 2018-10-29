@@ -1,0 +1,20 @@
+server:
+  port: 7900
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: Git仓库地址
+          username: 账号名称
+          password: 账号密码
+          search-paths: config-repo
+  application:
+    name: dm-config-server
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+      defaultZone: http://root:123456@localhost:7776/eureka/
+  instance:
+    prefer-ip-address: true

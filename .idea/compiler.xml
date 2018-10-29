@@ -6,15 +6,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dm-base-consumer" />
+        <module name="dm-base-provider" />
         <module name="dm-common-client" />
         <module name="dm-common-dao" />
         <module name="dm-common-dto" />
         <module name="dm-common-ext-utils" />
         <module name="dm-common-module" />
         <module name="dm-common-utils" />
+        <module name="dm-config-server" />
         <module name="dm-discovery-eureka" />
+        <module name="dm-file-consumer" />
+        <module name="dm-gateway-zuul" />
+        <module name="dm-item-consumer" />
+        <module name="dm-item-provider" />
+        <module name="dm-item-search" />
+        <module name="dm-order-consumer" />
+        <module name="dm-order-provider" />
+        <module name="dm-pay-consumer" />
+        <module name="dm-pay-provider" />
+        <module name="dm-scheduler-consumer" />
+        <module name="dm-scheduler-provider" />
         <module name="dm-user-consumer" />
         <module name="dm-user-provider" />
+        <module name="dm-zipkin-server" />
       </profile>
     </annotationProcessing>
   </component>

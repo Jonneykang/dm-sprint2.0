@@ -1,0 +1,61 @@
+﻿server:
+  port: 7400
+spring:
+  application:
+    name: dm-order-consumer
+  datasource:
+    url: jdbc:mysql://192.168.230.130:3306/dm_item?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  rabbitmq:
+                    host: 192.168.230.130
+                    port: 5672
+                    username: guest
+                    password: guest
+                    publisher-confirms: true
+                    virtual-host: /
+  redis:
+    database: 0
+    host: 192.168.230.130
+    port: 6379
+    user: root
+    password: 123456
+    timeout: 3000
+  sleuth:
+    sampler:
+      percentage: 1.0
+  #activemq:
+    #broker-url: tcp://192.168.230.130:61616?jms.optimizeAcknowledge=true&jms.optimizeAcknowledgeTimeOut=30000&jms.redeliveryPolicy.maximumRedeliveries=10
+    #user: admin
+    #password: admin
+    #packages:
+      #trust-all: true
+  kafka:
+      producer:
+        retries: 0
+  #      batch-size: 16384 # 每次批量发送消息的数量
+        bootstrap-servers: 192.168.230.130:9092
+        buffer-memory: 33554432
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer # 指定消息key和消息体的编解码方式
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      listener:
+        poll-timeout: 10000
+eureka:
+  client:
+    service-url:
+        #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+        defaultZone: http://root:123456@localhost:7776/eureka/
+hystrix:
+  command:
+    defalut:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+logging:
+  level: info
+feign:
+  hystrix:
+    enabled: false #禁用容错处理
+moduleName: order_consumer
