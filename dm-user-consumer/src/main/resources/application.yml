@@ -1,0 +1,58 @@
+server:
+  port: 7100
+spring:
+  application:
+    name: dm-user-consumer
+  rabbitmq:
+    host: 192.168.230.130
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
+  redis:
+    database: 0
+    host: 192.168.230.130
+    port: 6379
+    user: root
+    password: 123456
+    timeout: 3000
+  #sleuth:
+    #sampler:
+      #percentage: 1.0
+moduleName: user_consumer
+---
+spring:
+  mail:
+    host: smtp.aliyun.com
+    port: 465
+    username: jonneykang@aliyun.com
+    password: jk-123456
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
+
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+      defaultZone: http://root:123456@localhost:7776/eureka/
+# dm-goods-provider.ribbon.NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+hystrix:
+  command:
+    defalut:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+logging:
+  level: debug
+
+feign:
+  hystrix:
+    enabled: true #禁用容错处理 false

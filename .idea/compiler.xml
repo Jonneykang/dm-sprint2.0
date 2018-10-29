@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dm-common-client" />
+        <module name="dm-common-dao" />
+        <module name="dm-common-dto" />
+        <module name="dm-common-ext-utils" />
+        <module name="dm-common-module" />
+        <module name="dm-common-utils" />
+        <module name="dm-discovery-eureka" />
+        <module name="dm-user-consumer" />
+        <module name="dm-user-provider" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
