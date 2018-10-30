@@ -85,7 +85,7 @@ public class RestDmOrderService {
             return false;
         }
         DmOrder dmOrder = this.getDmOrderByOrderNo(orderNo);
-        String tradeNo = flag == Constants.PayMethod.WINXI ? dmOrder.getWxTradeNo() : dmOrder.getAliTradeNo();
+        String tradeNo = flag == Constants.PayMethod.WEIXIN ? dmOrder.getWxTradeNo() : dmOrder.getAliTradeNo();
         return dmOrder.getOrderType().equals(0) && !EmptyUtils.isEmpty(tradeNo);
     }
 }
