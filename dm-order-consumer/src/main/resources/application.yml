@@ -9,12 +9,10 @@ spring:
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   rabbitmq:
-                    host: 192.168.230.130
-                    port: 5672
-                    username: guest
-                    password: guest
-                    publisher-confirms: true
-                    virtual-host: /
+    host: 192.168.230.130
+    port: 5672
+    username: guest
+    password: guest
   redis:
     database: 0
     host: 192.168.230.130
@@ -45,7 +43,7 @@ eureka:
   client:
     service-url:
         #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-        defaultZone: http://root:123456@localhost:7776/eureka/
+        defaultZone: http://root:123456@192.168.230.130:7776/eureka/
 hystrix:
   command:
     defalut:

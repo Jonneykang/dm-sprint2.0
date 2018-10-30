@@ -13,8 +13,6 @@ spring:
     port: 5672
     username: guest
     password: guest
-    publisher-confirms: true
-    virtual-host: /
   redis:
     database: 0
     host: 192.168.230.130
@@ -35,7 +33,7 @@ eureka:
   client:
     service-url:
       #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-      defaultZone: http://root:123456@localhost:7776/eureka/
+      defaultZone: http://root:123456@192.168.230.130:7776/eureka/
 hystrix:
   command:
     defalut:
@@ -49,3 +47,4 @@ logging:
 feign:
   hystrix:
     enabled: false #禁用容错处理
+moduleName: dm-scheduler-consumer

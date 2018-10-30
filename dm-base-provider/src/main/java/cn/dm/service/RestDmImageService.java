@@ -115,7 +115,7 @@ public class RestDmImageService {
     }
 
     public static void main(String[] args) {
-        String a = "http://192.168.9.151:8888/524314979315224576.png";
+        String a = "http://192.168.230.130:8888/524314979315224576.png";
         String name = a.substring(a.lastIndexOf("/") + 1, a.length());
         System.out.println(name);
     }

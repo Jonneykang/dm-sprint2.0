@@ -120,7 +120,7 @@ public class Constants {
     public static final String IMAGE_TOKEN_PREFIX = "imageCache:";
 
     //文件服务器前缀
-    public static final String FILE_PRE = "http://192.168.9.151:8888/";
+    public static final String FILE_PRE = "http://192.168.230.130:8888/";
 
     public static final String DEFAULT_USER = "default_user.jpg";
 

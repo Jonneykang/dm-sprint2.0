@@ -10,8 +10,6 @@ spring:
     port: 5672
     username: guest
     password: guest
-    publisher-confirms: true
-    virtual-host: /
   redis:
     database: 0
     host: 192.168.230.130
@@ -31,7 +29,7 @@ eureka:
   client:
     service-url:
       #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-      defaultZone: http://root:123456@localhost:7776/eureka/
+      defaultZone: http://root:123456@192.168.230.130:7776/eureka/
 hystrix:
   command:
     defalut:
@@ -51,10 +49,10 @@ feign:
 
 elasticsearch:
   ip: 192.168.230.130
-  port: 8300
+  port: 9300
   clusterName: elasticsearch-application
 
 lastUpdatedTimeFile:
    /usr/local/dm_last_updated_time
 
-moduleName: dm-item
+moduleName: dm-item-search

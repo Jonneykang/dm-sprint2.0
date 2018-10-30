@@ -2,14 +2,12 @@ package cn.dm.filter;
 
 import cn.dm.common.DtoUtil;
 import cn.dm.common.RedisUtils;
-import cn.dm.exception.ErrorCode;
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,8 +35,10 @@ public class PreFilter extends ZuulFilter {
         return true;
     }
 
-    @Value("${tokenValidation}")
-    private boolean tokenValidation;
+   /* @Value("${tokenValidation}")
+    private boolean tokenValidation;*/
+   private boolean tokenValidation = true;//默认开启token认证
+
 
     @Override
     public Object run() {

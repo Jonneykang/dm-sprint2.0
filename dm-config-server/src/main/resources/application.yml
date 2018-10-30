@@ -5,9 +5,9 @@ spring:
     config:
       server:
         git:
-          uri: Git仓库地址
-          username: 账号名称
-          password: 账号密码
+          uri: https://github.com/Jonneykang/dm-sprint2.0.git
+          username: xxxxxxx
+          password: xxxxxxx
           search-paths: config-repo
   application:
     name: dm-config-server
@@ -15,6 +15,6 @@ eureka:
   client:
     service-url:
       #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-      defaultZone: http://root:123456@localhost:7776/eureka/
+      defaultZone: http://root:123456@192.168.230.130:7776/eureka/
   instance:
     prefer-ip-address: true

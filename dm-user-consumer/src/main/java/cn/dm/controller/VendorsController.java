@@ -86,7 +86,7 @@ public class VendorsController {
         String token = dmLoginService.getWxUserInfo(userInfoMap, wechatToken.get("openid").toString());
 
         //返回前端处理
-        String loginPage = "http://192.168.9.151:8888/#/?token="+token;
+        String loginPage = "http://192.168.230.130:8888/#/?token="+token;
         response.sendRedirect(loginPage.toString());
     }
 

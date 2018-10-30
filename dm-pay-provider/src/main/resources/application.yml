@@ -6,8 +6,8 @@ spring:
     port: 5672
     username: guest
     password: guest
-    publisher-confirms: true
-    virtual-host: /
+  profiles:
+    active: provider1
   datasource:
     url: jdbc:mysql://192.168.230.130:3306/dm_pay?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
     username: root
@@ -27,11 +27,27 @@ eureka:
   client:
     service-url:
         #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-         defaultZone: http://root:123456@localhost:7776/eureka/
+         defaultZone: http://root:123456@192.168.230.130:7776/eureka/
   instance:
     prefer-ip-address: true
 server:
   port: 7031
 
+
+---
+spring:
+  profiles: provider2
+  sleuth:
+    sampler:
+      percentage: 1.0
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+      defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+  instance:
+    prefer-ip-address: true
+server:
+  port: 7032
 
 

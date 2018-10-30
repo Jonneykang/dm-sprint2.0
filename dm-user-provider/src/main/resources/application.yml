@@ -11,8 +11,7 @@ spring:
     port: 5672
     username: guest
     password: guest
-    publisher-confirms: true
-    virtual-host: /
+
   redis:
     database: 0
     host: 192.168.230.130
@@ -20,10 +19,13 @@ spring:
     user: root
     password: 123456
     timeout: 3000
+  profiles:
+    active: provider1
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
-moduleName: user_provider 
-
+moduleName: user_provider
+---
+spring:
   profiles: provider1
   sleuth:
     sampler:
@@ -32,8 +34,23 @@ eureka:
   client:
     service-url:
        #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-       defaultZone: http://root:123456@localhost:7776/eureka/
+       defaultZone: http://root:123456@192.168.230.130:7776/eureka/
   instance:
     prefer-ip-address: true
 server:
   port: 7011
+---
+spring:
+  profiles: provider2
+  sleuth:
+    sampler:
+      percentage: 1.0
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+      defaultZone: http://root:123456@192.168.230.130:7776/eureka/
+  instance:
+    prefer-ip-address: true
+server:
+  port: 7012

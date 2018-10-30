@@ -18,8 +18,6 @@ spring:
     port: 5672
     username: guest
     password: guest
-    publisher-confirms: true
-    virtual-host: /
 #  activemq:
 #    broker-url: tcp://192.168.230.130:61616?jms.optimizeAcknowledge=true&jms.optimizeAcknowledgeTimeOut=30000&jms.redeliveryPolicy.maximumRedeliveries=10
 #    user: admin
@@ -30,7 +28,7 @@ eureka:
   client:
     service-url:
        #defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-       defaultZone: http://root:123456@localhost:7776/eureka/
+       defaultZone: http://root:123456@192.168.230.130:7776/eureka/
 # shop-goods-provider.ribbon.NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
 hystrix:
   command:

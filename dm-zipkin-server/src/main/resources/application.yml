@@ -6,6 +6,8 @@ spring:
     port: 5672
     username: guest
     password: guest
+    publisher-confirms: true
+    virtual-host: /
   datasource:
     url: jdbc:mysql://192.168.230.130:3306/dm_zipkin?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
     username: root
