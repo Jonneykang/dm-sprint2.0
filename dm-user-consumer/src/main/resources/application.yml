@@ -24,8 +24,8 @@ spring:
   mail:
     host: smtp.aliyun.com
     port: 465
-    username: jonneykang@aliyun.com
-    password: jk-123456
+    username: xxx
+    password: xxx
     default-encoding: utf-8
     properties:
       mail:

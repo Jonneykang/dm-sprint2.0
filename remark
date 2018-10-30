@@ -1,0 +1,29 @@
+dm-common  公共依赖模块 模块已上传至私服，地址：http://192.168.230.130:8081/content/repositories/thirdparty
+
+模块启动顺序
+
+dm-config-server 全局配置模块
+dm-discovery-eureka 注册中心
+dm-gateway-zuul  网关做登录认证以及调用服务负载均衡
+dm-zipkin-server 跟踪和监控所有服务调用
+
+dm-user-provider
+dm-user-consumer 用户、常用联系人
+
+dm-base-provider
+dm-base-consumer 区域和图片
+
+dm-scheduler-provider
+dm-scheduler-consumer 排期、排期座位以及作为价格
+
+dm-item-provider
+dm-item-consumer
+dm-item-search  节目、节目类型、剧院、剧院座位、节目评论
+
+dm-order-provider
+dm-order-consumer 订单及订单联系人
+
+dm-pay-provider
+dm-pay-consumer 交易
+
+dm-file-consumer 图片上传
