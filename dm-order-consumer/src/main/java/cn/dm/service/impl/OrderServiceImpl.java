@@ -67,6 +67,7 @@ public class OrderServiceImpl implements OrderService {
         //座位价格集合
         Double[] doublesPrice = new Double[seatArray.length];
         //先把当前座位对应的剧场锁定,避免同时操作
+        //这里可能会影响性能,所以这里可以改造成使用消息队列
         while (!redisUtils.lock(String.valueOf(orderVo.getSchedulerId()))) {
             TimeUnit.SECONDS.sleep(3);
         }
@@ -74,7 +75,7 @@ public class OrderServiceImpl implements OrderService {
         //查看当前座位是否已经被占用,如果被占用则直接返回
         for (int i = 0; i < seatArray.length; i++) {
             if (EmptyUtils.isNotEmpty(redisUtils.get(orderVo.getSchedulerId() + ":" + seatArray[i]))) {
-                isLock = true;
+                isLock = true;//本次订单选中的座位至少有一个已被选购
                 break;
             }
         }

@@ -92,6 +92,8 @@ public class OrderController {
             if (flag) {
                 //修改排期座位表中相应的座位的状态改为有座
                 orderService.updateSchedulerSeatStatus();
+                //Constants.TOPIC.ORDER_CONSUMER需要和logstash配置文件中配置的的kafka中topics相同
+                // 不然数据没法从kafka中获取
                 logUtils.i(Constants.TOPIC.ORDER_CONSUMER, "刷取订单成功");
             }
         } catch (Exception e) {
