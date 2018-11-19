@@ -216,6 +216,12 @@ public class DmLoginServiceImpl implements DmLoginService {
         this.save(token, dmUserVO);
     }
 
+    /**
+     * @param userInfoMap 用户信息入库包括openId
+     * @param openId
+     * @return
+     * @throws Exception
+     */
     @Override
     public String getWxUserInfo(Map<String, Object> userInfoMap, String openId) throws Exception {
         //用户昵称
