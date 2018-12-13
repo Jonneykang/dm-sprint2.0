@@ -3,7 +3,7 @@ package cn.dm.es.query;
 import java.io.Serializable;
 
 /***
- * 查詢商品的实体类
+ * 查询商品的实体类
  */
 public class ItemQuery implements Serializable{
     private Long itemTypeId1;
