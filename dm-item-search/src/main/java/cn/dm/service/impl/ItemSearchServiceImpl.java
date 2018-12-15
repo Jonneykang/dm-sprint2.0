@@ -77,7 +77,14 @@ public class ItemSearchServiceImpl implements ItemSearchService {
     }
 
     /***
+     * 增量更新mysql数据到ES
      * 导入item数据
+     * 对比数据库中的记录数据的“updatedTime”
+     * 保存的时间和记录上次更新索引库的时间：
+     * 保存在磁盘文件中。如果“updatedTime”的值大于上次保存的时间，
+     * 这时调用ES的API导入mysq数据到ES索引库。更新索引库后，
+     * 再将磁盘文件中的时间修改为最后上面“updatedTime”时间。
+     * 实现定时器定时对比以上两个时间的大小。
      * @throws Exception
      */
     @Scheduled(cron = "0 0/1 * * * ?")
