@@ -94,20 +94,22 @@ public class ItemSearchServiceImpl implements ItemSearchService {
         if(EmptyUtils.isNotEmpty(lastUpdatedTime)){
             params.put("lastUpdatedTime",lastUpdatedTime);
         }
+        //查询出需要同步的数据：最新创建和最新修改数据
         List<DmItem> dmItemList=restDmItemClient.getDmItemListByMap(params);
         List<IESDocument> itemSearchVoList=new ArrayList<IESDocument>();
         if(EmptyUtils.isNotEmpty(dmItemList)){
             for (DmItem dmItem:dmItemList){
                 ItemSearchVo itemSearchVo=new ItemSearchVo();
+                //更新商品
                 BeanUtils.copyProperties(dmItem,itemSearchVo);
-                //更新图片、区域名称、地址
+                //更新商品图片、区域名称、地址
                 List<DmImage> dmImages=restDmImageClient.queryDmImageList(dmItem.getId(), Constants.Image.ImageType.normal,Constants.Image.ImageCategory.item);
                 itemSearchVo.setImgUrl(EmptyUtils.isEmpty(dmImages)?null:dmImages.get(0).getImgUrl());
                 itemSearchVo.setItemTypeId1(dmItem.getItemType1Id());
                 itemSearchVo.setItemTypeId2(dmItem.getItemType2Id());
                 itemSearchVo.setStartTime(DateUtil.format(dmItem.getStartTime()));
                 itemSearchVo.setEndTime(DateUtil.format(dmItem.getEndTime()));
-
+                //更新影院
                 DmCinema dmCinema=restDmCinemaClient.getDmCinemaById(dmItem.getCinemaId());
                 itemSearchVo.setAreaId(dmCinema.getAreaId());
                 itemSearchVo.setAddress(dmCinema.getAddress());
