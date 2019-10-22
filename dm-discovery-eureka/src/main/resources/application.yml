@@ -5,8 +5,8 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
+        #defaultZone: http://root:123456@localhost:7776/eureka/
         defaultZone: http://root:123456@192.168.230.130:7776/eureka/
-#       defaultZone: http://root:123456@192.168.230.130:7776/eureka/
 security:
   user:
     name: root
